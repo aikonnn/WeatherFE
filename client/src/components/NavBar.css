@@ -1,0 +1,34 @@
+.navbar-container{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 24px;
+    font-size: 15px;
+    font-family: 'Segoe UI',SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.navbar-left-container{
+    display: flex;
+    align-items: baseline;
+}
+
+.navbar-small-text{
+    padding: 0 10px;
+}
+
+.navbar-button-cont{
+    display: flex;
+}
+
+.navbar-button {
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 2px solid white;
+    transition: 300ms;
+}
+
+.navbar-button:hover{
+    border-bottom: 2px solid black;
+}
