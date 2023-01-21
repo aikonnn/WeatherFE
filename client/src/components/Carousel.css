@@ -1,0 +1,48 @@
+.carousel--container {
+	width: 100%;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.carousel--background__image {
+	width: 100%;
+	height: 100%;
+}
+
+.carousel--image__container {
+	height: 400px;
+	width: 100%;
+	position: relative;
+}
+
+.carousel--info__container {
+	position: absolute;
+	top: 100px;
+	left: 10%;
+	width: 30%;
+}
+
+.carousel--title {
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.carousel--subtitle {
+	font-size: 17px;
+}
+
+.carousel--button {
+}
+
+.carousel--controller__container {
+	display: flex;
+}
+
+.carousel--controller__icon {
+	width: 25px;
+	height: 25px;
+	margin: 10px;
+	cursor: pointer;
+}
