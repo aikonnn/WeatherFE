@@ -73,9 +73,7 @@
 			}
 
 			function updateTileLayer() {
-				var layerName = document.getElementById('layerSelector').value;
-
-				var tileUrl = weatherTileUrl.replace('{layerName}', layerName);
+				var tileUrl = weatherTileUrl.replace('{layerName}', 'microsoft.weather.radar.main');
 
 				if (!tileLayer) {
 					//Create a tile layer and add it to the map below the label layer.
@@ -85,7 +83,8 @@
 						tileSize: 256
 					});
 
-					map.layers.add(tileLayer, 'labels');
+          map.layers.add(tileLayer, 'labels');
+          console.log(map.layers)
 				} else {
 					tileLayer.setOptions({
 						tileUrl: tileUrl
@@ -102,17 +101,6 @@
 			id="myMap"
 			style="position:relative;width:100%;min-width:290px;height:600px;"
 		></div>
-
-		<div
-			style="position:absolute;top:10px;left:10px;padding:10px;background-color:white;border-radius:10px;"
-		>
-			Select weather overlay:
-			<select id="layerSelector" onchange="updateTileLayer()">
-				<option value="microsoft.weather.radar.main" selected="selected"
-					>Radar</option
-				>
-				<option value="microsoft.weather.infrared.main">Infrared</option>
-			</select>
 		</div>
 	</body>
 </html>
