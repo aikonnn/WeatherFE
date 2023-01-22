@@ -27,37 +27,18 @@
 				'https://{azMapsDomain}/map/tile?api-version=2.0&tilesetId={layerName}&zoom={z}&x={x}&y={y}';
 
 			function GetMap() {
-				//Initialize a map instance.
 				map = new atlas.Map('myMap', {
 					center: [-99.47, 40.75],
 					zoom: 3,
 					view: 'Auto',
 					style: 'grayscale_dark',
 
-					//Add authentication details for connecting to Azure Maps.
 					authOptions: {
-						// //Use Azure Active Directory authentication.
-						// authType: 'anonymous',
-						// clientId: 'e6b6ab59-eb5d-4d25-aa57-581135b927f0', //Your Azure Maps client id for accessing your Azure Maps account.
-						// getToken: function(resolve, reject, map) {
-						// 	//URL to your authentication service that retrieves an Azure Active Directory Token.
-						// 	var tokenServiceUrl =
-						// 		'https://samples.azuremaps.com/api/GetAzureMapsToken';
-
-						// 	fetch(tokenServiceUrl)
-						// 		.then(r => r.text())
-						// 		.then(token => resolve(token));
-						// }
-
-						//Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
 						authType: 'subscriptionKey',
 						subscriptionKey: 'VQ-LDi3o1UVkC0dlcfhrhsTQgvt24DQ7YhQau0vMnko'
 					}
 				});
-
-				//Wait until the map resources are ready.
 				map.events.add('ready', function() {
-					//Create a style control and add it to the map.
 					map.controls.add(
 						new atlas.control.StyleControl({
 							mapStyles: 'all'
@@ -66,8 +47,6 @@
 							position: 'top-right'
 						}
 					);
-
-					//Initialize the weather tile layer.
 					updateTileLayer();
 				});
 			}
@@ -76,7 +55,6 @@
 				var tileUrl = weatherTileUrl.replace('{layerName}', 'microsoft.weather.radar.main');
 
 				if (!tileLayer) {
-					//Create a tile layer and add it to the map below the label layer.
 					tileLayer = new atlas.layer.TileLayer({
 						tileUrl: tileUrl,
 						opacity: 0.9,
